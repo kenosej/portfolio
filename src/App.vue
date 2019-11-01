@@ -1,24 +1,23 @@
 <template>
   <div id="app">
-    <Header/>
-<!--    <Home/>-->
-    <Services/>
+    <div id="nav">
+      <Header/>
+<!--      <router-link to="/">Home</router-link> |-->
+<!--      <router-link to="/about">About</router-link>-->
+<!--      <router-link to="/services">Skills</router-link>-->
+    </div>
+    <router-view/>
   </div>
 </template>
 
 <script>
-  import Header from "./components/Header";
-  // import Home from "./components/Home";
-import Services from "./components/Services";
-
-export default {
-  name: 'app',
-  components: {
-    Header,
-    // Home,
-    Services
+ import Header from "./components/Header";
+  export default {
+    name: 'app',
+    components: {
+      Header
+    }
   }
-}
 </script>
 
 <style>

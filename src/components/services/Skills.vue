@@ -2,7 +2,7 @@
     <div class="skills">
         <div class="left">
             <div class="arrow">
-                <img src="../../assets/reverse_arrow.png" alt="arrow">
+                <router-link to="/"><img src="../../assets/reverse_arrow.png" alt="arrow"></router-link>
             </div>
             <div class="languages">
                 <h1>SKILLS</h1>

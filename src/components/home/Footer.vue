@@ -5,7 +5,7 @@
             <span>Quality isn't expensive, it's priceless!</span>
         </div>
         <div class="arrow">
-            <img src="../../assets/arrow.png" alt="arrow">
+            <router-link to="/services"><img src="../../assets/arrow.png" alt="arrow"></router-link>
         </div>
     </div>
 </template>
