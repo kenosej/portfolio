@@ -66,4 +66,30 @@
     #coloredGmail:hover {
         opacity: 1;
     }
+
+    @media only screen and (min-width: 768px) {
+        .mail {
+            margin: 15px 0;
+        }
+
+        .contact h1 {
+            margin-bottom: 25px;
+        }
+
+        .contact:before {
+            width: 35%;
+        }
+
+        .contact:after {
+            position: absolute;
+            content: "";
+            width: 25%;
+            height: 1px;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #707070;
+            margin: 0 auto;
+        }
+    }
 </style>

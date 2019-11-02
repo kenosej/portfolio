@@ -41,4 +41,17 @@
         color: #BBB9B9;
         line-height: 1.6;
     }
+
+    @media only screen and (min-width: 768px) {
+        .offers {
+            margin: auto;
+            padding: 15px 0;
+        }
+
+        .offers h1 {
+            padding: 0 0 40px 10px;
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {}
 </style>

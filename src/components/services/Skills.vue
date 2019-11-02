@@ -210,4 +210,28 @@
         margin: 0 auto;
         background: #707070;
     }
+
+    @media only screen and (min-width: 768px) {
+        .skills {
+            grid-row: 3 / 4;
+        }
+
+        .right {
+            grid-template-rows: 50% 50%;
+        }
+
+        .projects {
+            padding: 2.5em 0;
+            margin-bottom: 10px;
+        }
+
+        .skills:before {
+            margin: 0 auto 7px;
+        }
+
+        .right:before {
+            width: 0;
+            height: 0;
+        }
+    }
 </style>

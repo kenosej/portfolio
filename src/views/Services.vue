@@ -35,4 +35,15 @@ import Ending from "../components/services/Ending";
         grid-template-rows: 43% 40% 9% 8%;
         height: 1158px;
     }
+
+    @media only screen and (min-width: 768px) {
+        .services {
+            grid-template-rows: 45% 15% 33% 7%;
+            height: 1364px;
+        }
+
+        .services h1 {
+            font-size: 22px;
+        }
+    }
 </style>
