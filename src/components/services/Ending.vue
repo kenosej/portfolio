@@ -28,4 +28,21 @@
     .ending span {
         font-size: 12px;
     }
+
+    @media only screen and (min-width: 1200px) {
+        .ending {
+            grid-area: ending;
+        }
+
+        .ending h2 {
+            font-size: 25px;
+            margin: auto;
+        }
+
+        .ending span {
+            position: fixed;
+            bottom: 0.5em;
+            right: 1em;
+        }
+    }
 </style>

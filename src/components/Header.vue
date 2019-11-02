@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="about">
-            <h1>ABOUT</h1>
+            <router-link to="/about"><h1>ABOUT</h1></router-link>
         </div>
     </div>
 </template>
@@ -30,6 +30,10 @@
 </script>
 
 <style scoped>
+    .about h1 {
+        color: #999999;
+    }
+
     .header {
         display: grid;
         grid-template-columns: 1fr 1fr;

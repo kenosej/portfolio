@@ -46,4 +46,22 @@ import Ending from "../components/services/Ending";
             font-size: 22px;
         }
     }
+
+    @media only screen and (min-width: 1200px) {
+        .services {
+            height: 90vh;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1.4fr 0.6fr;
+            grid-template-areas: "skills offers offers ."
+                                 "skills contact contact ending";
+        }
+
+        .services h1 {
+            font-size: 28px;
+        }
+
+        .services .skills p, .services .offers p {
+            font-size: 20px;
+        }
+    }
 </style>

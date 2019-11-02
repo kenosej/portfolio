@@ -5,7 +5,7 @@
             <div class="icon">
                 <img id="coloredGmail" src="../../assets/colored_gmail.png" alt="gmail">
                 <img id="classicGmail" src="../../assets/gmail.png" alt="gmail">
-                <span>kenankenosej@gmail.com</span>
+                <span>kenosej.business@gmail.com</span>
             </div>
         </div>
     </div>
@@ -55,6 +55,7 @@
 
     .icon img {
         height: 16px;
+        cursor: pointer;
     }
 
     #coloredGmail {
@@ -90,6 +91,30 @@
             right: 0;
             background: #707070;
             margin: 0 auto;
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .contact {
+            grid-area: contact;
+            padding-top: 10px;
+        }
+
+        .contact:before, .contact:after {
+            width: 0;
+            height: 0;
+        }
+
+        .contact h1 {
+            font-size: 32px;
+        }
+
+        .contact span {
+            font-size: 27px;
+        }
+
+        .icon img {
+            height: 27px;
         }
     }
 </style>

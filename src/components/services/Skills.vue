@@ -45,7 +45,6 @@
     }
 
     .left {
-        /*border: 1px solid greenyellow;*/
         display: grid;
         grid-template-rows: 16% 84%;
         position: relative;
@@ -230,6 +229,54 @@
         }
 
         .right:before {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .skills {
+            grid-area: skills;
+        }
+
+        .left {
+            grid-template-rows: 80% 20%;
+        }
+
+        .arrow {
+            grid-row: 2/3;
+            margin-left: 3em;
+            margin-top: 1em;
+        }
+
+        .arrow img {
+            height: 105px;
+        }
+
+        .languages {
+            margin: auto 1em;
+        }
+
+        .right {
+            display: grid;
+            grid-template-rows: 50% 50%;
+            position: fixed;
+            right: 1em;
+            top: 25%;
+        }
+
+        .projects {
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+
+        .learning {
+            margin: 0;
+        }
+
+        .skills:before, .projects:before,
+        .left:before, .right:before {
             width: 0;
             height: 0;
         }
