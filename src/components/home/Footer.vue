@@ -5,6 +5,7 @@
             <span>Quality isn't expensive, it's priceless!</span>
         </div>
         <div class="arrow">
+            <!--            <router-link to="/services"><img src="../../assets/arrow.png" alt="arrow"></router-link>-->
             <router-link to="/services"><img src="../../assets/arrow.png" alt="arrow"></router-link>
         </div>
     </div>
@@ -67,6 +68,10 @@
         position: absolute;
         right: 2em;
         bottom: 7.5em;
+    }
+
+    .arrow a {
+        z-index: 2;
     }
 
     .arrow img {

@@ -4,13 +4,13 @@
         <p><span>•</span> MAKE ENTIRE WEBSITE FROM SCRATCH</p>
         <p><span>•</span> BACK-END / FRONT-END</p>
         <p><span>•</span> FIND AND RESOLVE BUGS</p>
+        <p><span>•</span> FROM OLD PHP TO PHP 7.3.11</p>
         <p><span>•</span> OPTIMIZE PAGE LOAD SPEED</p>
         <p><span>•</span> CONFIGURE/OPTIMISE DATABASE</p>
         <p><span>•</span> ENHANCE SEO</p>
         <p><span>•</span> CONVERT TO HTML/CSS/JS (FROM PSD...)</p>
         <p><span>•</span> MAKE WEBSITE RESPONSIVE</p>
         <p><span>•</span> DESIGN WEBSITE IN ADOBE XD</p>
-        <p><span>•</span> FROM OLD PHP TO PHP 7.3.11</p>
     </div>
 </template>
 

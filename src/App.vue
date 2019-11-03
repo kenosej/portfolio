@@ -1,10 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <Header/>
-<!--      <router-link to="/">Home</router-link> |-->
-<!--      <router-link to="/about">About</router-link>-->
-<!--      <router-link to="/services">Skills</router-link>-->
+      <Header v-bind:about="this.isAbout"/>
     </div>
     <router-view/>
   </div>
@@ -16,6 +13,15 @@
     name: 'app',
     components: {
       Header
+    },
+    watch:{
+      $route (to) {
+        if (to.name === "about") {
+          this.isAbout = true;
+        } else {
+          this.isAbout = false;
+        }
+      }
     }
   }
 </script>

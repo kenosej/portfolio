@@ -18,14 +18,17 @@
             </div>
         </div>
         <div class="about">
-            <router-link to="/about"><h1>ABOUT</h1></router-link>
+            <router-link :to="(about ? '/' : '/about')"><h1>{{(about ? 'HOME' : 'ABOUT')}}</h1></router-link>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Header"
+        name: "Header",
+        props: {
+            about: Boolean
+        }
     }
 </script>
 
@@ -44,6 +47,7 @@
         display: flex;
         margin-top: 2em;
         margin-left: 2em;
+        max-height: 10vh;
     }
 
     .icon {

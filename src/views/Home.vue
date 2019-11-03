@@ -1,7 +1,11 @@
 <template>
     <div class="home">
-        <Middle/>
-        <Footer/>
+<!--        <keep-alive>-->
+            <Middle/>
+<!--        </keep-alive>-->
+<!--        <keep-alive>-->
+            <Footer/>
+<!--        </keep-alive>-->
     </div>
 </template>
 
@@ -22,6 +26,7 @@
     .home {
         display: grid;
         height: 90vh;
+        width: 100%;
         overflow: hidden;
         grid-template-rows: 70vh 20vh;
     }

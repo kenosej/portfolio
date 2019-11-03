@@ -1,17 +1,25 @@
 <template>
     <div class="services">
-        <Offers/>
-        <Skills/>
-        <Contact/>
-        <Ending/>
+<!--        <keep-alive>-->
+            <Offers/>
+<!--        </keep-alive>-->
+<!--        <keep-alive>-->
+            <Skills/>
+<!--        </keep-alive>-->
+<!--        <keep-alive>-->
+            <Contact/>
+<!--        </keep-alive>-->
+<!--        <keep-alive>-->
+            <Ending/>
+<!--        </keep-alive>-->
     </div>
 </template>
 
 <script>
-import Offers from "../components/services/Offers";
-import Skills from "../components/services/Skills";
-import Contact from "../components/services/Contact";
-import Ending from "../components/services/Ending";
+    import Offers from "../components/services/Offers";
+    import Skills from "../components/services/Skills";
+    import Contact from "../components/services/Contact";
+    import Ending from "../components/services/Ending";
 
     export default {
         name: "Services",
@@ -52,8 +60,7 @@ import Ending from "../components/services/Ending";
             height: 90vh;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: 1.4fr 0.6fr;
-            grid-template-areas: "skills offers offers ."
-                                 "skills contact contact ending";
+            grid-template-areas: "skills offers offers ." "skills contact contact ending";
         }
 
         .services h1 {

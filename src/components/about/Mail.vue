@@ -47,6 +47,7 @@
 
     .mail img {
         height: 20px;
+        cursor: pointer;
     }
 
     .mail h1 {

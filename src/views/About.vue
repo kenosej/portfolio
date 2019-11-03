@@ -1,8 +1,14 @@
 <template>
-    <div class="about">
-        <Bio/>
-        <Info/>
-        <Mail/>
+    <div id="about">
+<!--        <keep-alive>-->
+            <Bio/>
+<!--        </keep-alive>-->
+<!--        <keep-alive>-->
+            <Info/>
+<!--        </keep-alive>-->
+<!--        <keep-alive>-->
+            <Mail/>
+<!--        </keep-alive>-->
     </div>
 </template>
 
@@ -22,21 +28,21 @@
 </script>
 
 <style>
-    .about {
+    #about {
         height: 833px;
         display: grid;
         grid-auto-rows: 70% 18% 12%;
     }
 
     @media only screen and (min-width: 768px) {
-        .about {
+        #about {
             height: 90vh;
             grid-auto-rows: 75% 15% 10%;
         }
     }
 
     @media only screen and (min-width: 1200px) {
-        .about {
+        #about {
             grid-template-rows: 80vh 10vh;
             grid-template-columns: repeat(3, 1fr);
             grid-template-areas: "bio bio bio" "info mail info2";
