@@ -65,9 +65,11 @@
     }
 
     .arrow {
-        position: absolute;
-        right: 2em;
-        bottom: 7.5em;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        bottom: 24vh;
+        margin-right: 2em;
     }
 
     .arrow a {

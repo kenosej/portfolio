@@ -35,6 +35,7 @@
 <style scoped>
     .about h1 {
         color: #999999;
+        z-index: 2;
     }
 
     .header {

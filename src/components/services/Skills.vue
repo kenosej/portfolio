@@ -258,11 +258,13 @@
         }
 
         .right {
-            display: grid;
-            grid-template-rows: 50% 50%;
             position: fixed;
             right: 1em;
-            top: 25%;
+            bottom: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 90vh;
         }
 
         .projects {
@@ -272,7 +274,7 @@
         }
 
         .learning {
-            margin: 0;
+            margin: 2.2em 0 0;
         }
 
         .skills:before, .projects:before,

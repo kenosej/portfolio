@@ -3,7 +3,8 @@
         <div id="nav">
             <Header v-bind:about="this.isAbout"/>
         </div>
-        <transition name="landing">
+        <transition
+                :name="((this.goingTo === 'Services' && this.comingFrom === 'home') || (this.goingTo === 'home' && this.comingFrom === 'Services') ? 'services' : 'landing')">
             <router-view/>
         </transition>
     </div>
@@ -18,8 +19,10 @@
             Header
         },
         watch: {
-            $route(to) {
+            $route(to, from) {
                 this.isAbout = to.name === "about";
+                this.goingTo = to.name;
+                this.comingFrom = from.name;
             }
         }
     }
@@ -86,6 +89,9 @@
         background-color: #333333;
         color: #999999;
         font-family: "Open Sans", serif;
+        overflow-y: hidden;
+        position: absolute;
+        overflow-x: hidden;
     }
 
     .landing-enter-active,
@@ -118,29 +124,43 @@
         opacity: 0;
     }
 
+    /**/
 
+    .services-enter-active,
+    .services-leave-active {
+        transition: 1s;
+    }
 
-    /*@keyframes coming {*/
-    /*    from {*/
-    /*        transform: translateX(-100%);*/
-    /*        opacity: 0;*/
-    /*        position: absolute;*/
-    /*    }*/
-    /*    to {*/
-    /*        transform: translateX(0);*/
-    /*        opacity: 1;*/
-    /*        position: static;*/
-    /*    }*/
-    /*}*/
+    .services-enter-active {
+        animation: coming 1s;
+    }
+
+    .services-leave-active {
+        animation: going 1s;
+    }
+
+    @keyframes coming {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+            position: absolute;
+        }
+        to {
+            position: static;
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
 
     @keyframes going {
         from {
             transform: translateX(0);
             opacity: 1;
+            position: static;
         }
 
         to {
-            transform: translateX(-100%);
+            transform: translateX(100%);
             position: absolute;
             opacity: 0;
         }
