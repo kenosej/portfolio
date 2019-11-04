@@ -3,7 +3,7 @@
         <div id="nav">
             <Header v-bind:about="this.isAbout"/>
         </div>
-        <transition name="router-anim">
+        <transition name="landing">
             <router-view/>
         </transition>
     </div>
@@ -19,11 +19,7 @@
         },
         watch: {
             $route(to) {
-                if (to.name === "about") {
-                    this.isAbout = true;
-                } else {
-                    this.isAbout = false;
-                }
+                this.isAbout = to.name === "about";
             }
         }
     }
@@ -92,36 +88,61 @@
         font-family: "Open Sans", serif;
     }
 
-    .router-anim-enter-active {
-        animation: coming 1s;
-        animation-delay: 0.5s;
+    .landing-enter-active,
+    .landing-leave-active {
+        transition: 1s;
+    }
+
+
+    .landing-enter {
+        transform: translateX(-100%);
+        opacity: 0;
+        position: absolute;
+    }
+
+    .landing-enter-to {
+        position: static;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .landing-leave {
+        transform: translateX(0);
+        opacity: 1;
+        position: static;
+    }
+
+    .landing-leave-to {
+        transform: translateX(-100%);
+        position: absolute;
         opacity: 0;
     }
 
-    .router-anim-leave-active {
-        animation: going 1s;
-    }
+
+
+    /*@keyframes coming {*/
+    /*    from {*/
+    /*        transform: translateX(-100%);*/
+    /*        opacity: 0;*/
+    /*        position: absolute;*/
+    /*    }*/
+    /*    to {*/
+    /*        transform: translateX(0);*/
+    /*        opacity: 1;*/
+    /*        position: static;*/
+    /*    }*/
+    /*}*/
 
     @keyframes going {
         from {
-            /*transform: translateX(0);*/
+            transform: translateX(0);
             opacity: 1;
         }
 
         to {
-            /*transform: translateX(-50px);*/
+            transform: translateX(-100%);
+            position: absolute;
             opacity: 0;
-        }
-    }
-
-    @keyframes coming {
-        from {
-            /*transform: translateX(-50px);*/
-            opacity: 0;
-        }
-        to {
-            /*transform: translateX(0);*/
-            opacity: 1;
         }
     }
 </style>

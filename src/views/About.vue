@@ -32,6 +32,7 @@
         height: 833px;
         display: grid;
         grid-auto-rows: 70% 18% 12%;
+        width: 100%;
     }
 
     @media only screen and (min-width: 768px) {
