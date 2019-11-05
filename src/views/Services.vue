@@ -42,6 +42,7 @@
         display: grid;
         grid-template-rows: 43% 40% 9% 8%;
         height: 1158px;
+        width: 100%;
     }
 
     @media only screen and (min-width: 768px) {

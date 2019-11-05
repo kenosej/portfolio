@@ -99,7 +99,6 @@
         transition: 1s;
     }
 
-
     .landing-enter {
         transform: translateX(-100%);
         opacity: 0;
@@ -131,38 +130,27 @@
         transition: 1s;
     }
 
-    .services-enter-active {
-        animation: coming 1s;
+    .services-enter {
+        transform: translateX(100%);
+        opacity: 0;
+        position: absolute;
     }
 
-    .services-leave-active {
-        animation: going 1s;
+    .services-enter-to {
+        position: static;
+        transform: translateX(0);
+        opacity: 1;
     }
 
-    @keyframes coming {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-            position: absolute;
-        }
-        to {
-            position: static;
-            transform: translateX(0);
-            opacity: 1;
-        }
+    .services-leave {
+        transform: translateX(0);
+        opacity: 1;
+        position: static;
     }
 
-    @keyframes going {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-            position: static;
-        }
-
-        to {
-            transform: translateX(100%);
-            position: absolute;
-            opacity: 0;
-        }
+    .services-leave-to {
+        transform: translateX(100%);
+        position: absolute;
+        opacity: 0;
     }
 </style>
