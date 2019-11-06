@@ -217,7 +217,7 @@
         right: 5px;
         cursor: default;
         transition: 0.2s;
-        font-size: 23px;
+        font-size: 15px;
     }
 
     .gems div:not(:last-child) {
@@ -266,6 +266,10 @@
             display: block;
             margin-top: 0;
             line-height: 1.5em;
+        }
+
+        .gems div {
+            font-size: 23px;
         }
 
         .middle:not(.gems) {
