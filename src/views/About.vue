@@ -1,14 +1,14 @@
 <template>
     <div id="about">
-<!--        <keep-alive>-->
+        <keep-alive>
             <Bio/>
-<!--        </keep-alive>-->
-<!--        <keep-alive>-->
+        </keep-alive>
+        <keep-alive>
             <Info/>
-<!--        </keep-alive>-->
-<!--        <keep-alive>-->
+        </keep-alive>
+        <keep-alive>
             <Mail/>
-<!--        </keep-alive>-->
+        </keep-alive>
     </div>
 </template>
 

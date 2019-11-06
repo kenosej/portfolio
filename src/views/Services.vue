@@ -1,17 +1,17 @@
 <template>
     <div class="services">
-<!--        <keep-alive>-->
+        <keep-alive>
             <Offers/>
-<!--        </keep-alive>-->
-<!--        <keep-alive>-->
+        </keep-alive>
+        <keep-alive>
             <Skills/>
-<!--        </keep-alive>-->
-<!--        <keep-alive>-->
+        </keep-alive>
+        <keep-alive>
             <Contact/>
-<!--        </keep-alive>-->
-<!--        <keep-alive>-->
+        </keep-alive>
+        <keep-alive>
             <Ending/>
-<!--        </keep-alive>-->
+        </keep-alive>
     </div>
 </template>
 

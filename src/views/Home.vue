@@ -1,11 +1,11 @@
 <template>
     <div class="home">
-<!--        <keep-alive>-->
+        <keep-alive>
             <Middle/>
-<!--        </keep-alive>-->
-<!--        <keep-alive>-->
+        </keep-alive>
+        <keep-alive>
             <Footer/>
-<!--        </keep-alive>-->
+        </keep-alive>
     </div>
 </template>
 
