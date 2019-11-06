@@ -6,16 +6,56 @@
             <h3>Full Stack Web Developer</h3>
         </div>
         <div class="gems">
-            <span id="phpGem">•</span> <br>
-            <span id="jqueryGem">•</span> <br>
-            <span id="cssGem">•</span> <br>
-            <span id="jsGem">•</span> <br>
-            <span id="sqlGem">•</span> <br>
-            <span id="xdGem">•</span> <br>
-            <span id="linuxGem">•</span> <br>
-            <span id="nodeGem">•</span> <br>
-            <span id="vueGem">•</span> <br>
-            <span id="wpGem">•</span>
+            <div id="phpGem">
+                •
+                <span class="bubble">PHP</span>
+            </div>
+            <div id="jqueryGem">
+                •
+                <span class="bubble">jQuery</span>
+            </div>
+            <div id="cssGem">
+                •
+                <span class="bubble">CSS3</span>
+            </div>
+            <div id="jsGem">
+                •
+                <span class="bubble">Javascript</span>
+            </div>
+            <div id="sqlGem">
+                •
+                <span class="bubble">SQL</span>
+            </div>
+            <div id="xdGem">
+                •
+                <span class="bubble">Adobe XD</span>
+            </div>
+            <div id="linuxGem">
+                •
+                <span class="bubble">Linux</span>
+            </div>
+            <div id="nodeGem">
+                •
+                <span class="bubble">Node</span>
+            </div>
+            <div id="vueGem">
+                •
+                <span class="bubble">Vue</span>
+            </div>
+            <div id="wpGem">
+                •
+                <span class="bubble">Wordpress</span>
+            </div>
+
+<!--            <span id="jqueryGem">•</span> <br>-->
+<!--            <span id="cssGem">•</span> <br>-->
+<!--            <span id="jsGem">•</span> <br>-->
+<!--            <span id="sqlGem">•</span> <br>-->
+<!--            <span id="xdGem">•</span> <br>-->
+<!--            <span id="linuxGem">•</span> <br>-->
+<!--            <span id="nodeGem">•</span> <br>-->
+<!--            <span id="vueGem">•</span> <br>-->
+<!--            <span id="wpGem">•</span>-->
         </div>
     </div>
 </template>
@@ -72,7 +112,7 @@
         margin-top: 20px;
         font-size: 24px;
         position: relative;
-        padding: 0 0 12px;
+        padding: 0 0 11px;
     }
 
     .name h3:before {
@@ -96,40 +136,114 @@
         color: #6582BC;
     }
 
+    #phpGem:hover {
+        --main-hover-color: #6582BC;
+    }
+
     #jqueryGem {
         color: #0867AC;
+    }
+
+    #jqueryGem:hover {
+        --main-hover-color: #0867AC;
     }
 
     #cssGem {
         color: #379AD6;
     }
 
+    #cssGem:hover {
+        --main-hover-color: #379AD6;
+    }
+
     #jsGem {
         color: #F0DB4F;
+    }
+
+    #jsGem:hover {
+        --main-hover-color: #F0DB4F;
     }
 
     #sqlGem {
         color: #F8981D;
     }
 
+    #sqlGem:hover {
+        --main-hover-color: #F8981D;
+    }
+
     #xdGem {
         color: #FF2BC2;
+    }
+
+    #xdGem:hover {
+        --main-hover-color: #FF2BC2;
     }
 
     #linuxGem {
         color: #9CCD2A;
     }
 
+    #linuxGem:hover {
+        --main-hover-color: #9CCD2A;
+    }
+
     #nodeGem {
         color: #83CD29;
+    }
+
+    #nodeGem:hover {
+        --main-hover-color: #83CD29;
     }
 
     #vueGem {
         color: #41B883;
     }
 
+    #vueGem:hover {
+        --main-hover-color: #41B883;
+    }
+
     #wpGem {
         color: #3698C5;
+    }
+
+    #wpGem:hover {
+        --main-hover-color: #3698C5;
+    }
+
+    .gems div {
+        position: relative;
+        right: 5px;
+        cursor: default;
+        transition: 0.2s;
+        font-size: 23px;
+    }
+
+    .gems div:not(:last-child) {
+        margin-right: 15px;
+    }
+
+    .gems div:hover {
+        transform: scale(1.4);
+        text-shadow: 0 0 10px var(--main-hover-color);
+    }
+
+    .bubble {
+        visibility: hidden;
+        position: absolute;
+        background-color: #4b4b4b;
+        color: #fff;
+        text-align: center;
+        z-index: 1;
+        border-radius: 6px;
+        padding: 0 8px;
+        top: -1%;
+        right: 110%;
+        font-size: 11px;
+        margin-right: 7px;
+        white-space: pre;
+        text-shadow: none !important;
     }
 
     @media only screen and (min-width: 768px) {
@@ -161,8 +275,23 @@
             align-items: center;
         }
 
-        .gems span:not(:last-child) {
+        .gems div:not(:last-child) {
             margin-right: 0;
+        }
+
+        .bubble:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 98%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent #4b4b4b;
+        }
+
+        .gems div:hover .bubble {
+            visibility: visible;
         }
     }
 

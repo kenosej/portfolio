@@ -47,8 +47,8 @@
 
     @media only screen and (min-width: 768px) {
         .services {
-            grid-template-rows: 45% 15% 33% 7%;
-            height: 1364px;
+            grid-template-rows: 45% 12% 36% 7%;
+            height: 1400px;
         }
 
         .services h1 {

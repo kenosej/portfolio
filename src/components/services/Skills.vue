@@ -26,6 +26,7 @@
                 <p><span id="node">•</span> NODE.JS</p>
                 <p><span id="vue">•</span> VUE.JS</p>
                 <p><span id="wp">•</span> WORDPRESS</p>
+                <p><span id="laravel">•</span> LARAVEL</p>
             </div>
         </div>
     </div>
@@ -165,6 +166,10 @@
         color: #3698C5;
     }
 
+    .learning p #laravel {
+        color: #ff6358;
+    }
+
     .skills:before {
         position: absolute;
         content: '';
@@ -225,7 +230,7 @@
         }
 
         .skills:before {
-            margin: 0 auto 7px;
+            margin: 0 auto 3px;
         }
 
         .right:before {
