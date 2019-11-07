@@ -42,20 +42,14 @@
                 •
                 <span class="bubble">Vue</span>
             </div>
+            <div id="laravelGem">
+                •
+                <span class="bubble">Laravel</span>
+            </div>
             <div id="wpGem">
                 •
                 <span class="bubble">Wordpress</span>
             </div>
-
-<!--            <span id="jqueryGem">•</span> <br>-->
-<!--            <span id="cssGem">•</span> <br>-->
-<!--            <span id="jsGem">•</span> <br>-->
-<!--            <span id="sqlGem">•</span> <br>-->
-<!--            <span id="xdGem">•</span> <br>-->
-<!--            <span id="linuxGem">•</span> <br>-->
-<!--            <span id="nodeGem">•</span> <br>-->
-<!--            <span id="vueGem">•</span> <br>-->
-<!--            <span id="wpGem">•</span>-->
         </div>
     </div>
 </template>
@@ -204,6 +198,14 @@
         --main-hover-color: #41B883;
     }
 
+    #laravelGem {
+        color: #ff6358;
+    }
+
+    #laravelGem:hover {
+        --main-hover-color: #ff6358;
+    }
+
     #wpGem {
         color: #3698C5;
     }
@@ -214,7 +216,6 @@
 
     .gems div {
         position: relative;
-        right: 5px;
         cursor: default;
         transition: 0.2s;
         font-size: 15px;
@@ -270,6 +271,7 @@
 
         .gems div {
             font-size: 23px;
+            right: 5px;
         }
 
         .middle:not(.gems) {

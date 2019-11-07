@@ -3,9 +3,15 @@
         <h1>CONTACT</h1>
         <div class="mail">
             <div class="icon">
-                <img id="coloredGmail" src="../../assets/colored_gmail.png" alt="gmail">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com"
+                   target="_blank" rel="noopener noreferrer">
+                    <img id="coloredGmail" src="../../assets/colored_gmail.png" alt="gmail">
+                </a>
                 <img id="classicGmail" src="../../assets/gmail.png" alt="gmail">
-                <span>kenosej.business@gmail.com</span>
+                <span>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com"
+                       target="_blank" rel="noopener noreferrer">kenosej.business@gmail.com</a>
+                </span>
             </div>
         </div>
     </div>
@@ -50,6 +56,18 @@
 
     .icon span {
         padding-left: 10px;
+    }
+
+    .icon span a {
+        transition: 0.4s;
+    }
+
+    .icon span:hover a {
+        color: #d44638;
+    }
+
+    .icon span a {
+        text-decoration: none;
         color: #D9D8D8;
     }
 
