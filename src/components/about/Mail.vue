@@ -2,9 +2,15 @@
     <div class="mail">
         <h1>CONTACT</h1>
         <div class="mailDiv">
-            <img id="coloredMail" src="../../assets/colored_gmail.png" alt="gmail">
+            <a id="anchorImg" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com"
+               target="_blank" rel="noopener noreferrer">
+                <img id="coloredMail" src="../../assets/colored_gmail.png" alt="gmail">
+            </a>
             <img id="classicMail" src="../../assets/gmail.png" alt="gmail">
-            <span>kenosej.business@gmail.com</span>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com" target="_blank"
+               rel="noopener noreferrer">
+                <span>kenosej.business@gmail.com</span>
+            </a>
         </div>
     </div>
 </template>
@@ -30,9 +36,19 @@
         margin-top: 1em;
     }
 
+    .mailDiv a {
+        text-decoration: none;
+    }
+
     .mailDiv span {
         margin-left: 0.5em;
         color: #D9D8D8;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+    .mailDiv span:hover {
+        color: #d44638;
     }
 
     #coloredMail {
@@ -53,6 +69,10 @@
     .mail h1 {
         font-family: "Open Sans Regular", serif;
         font-size: 18px;
+    }
+
+    #anchorImg {
+        padding-bottom: 20px;
     }
 
     @media only screen and (min-width: 768px) {
@@ -81,7 +101,7 @@
         }
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1200px) and (orientation:landscape) {
+    @media screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
         .mail {
             margin-bottom: 0 !important;
         }

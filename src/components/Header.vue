@@ -3,18 +3,27 @@
         <div class="icons">
             <div class="icon">
                 <img id="ig" src="../assets/instagram.png" alt="instagram">
-                <img id="coloredIg" src="../assets/colored_instagram.png" alt="instagram">
+                <a href="https://instagram.com/keno_sej" target="_blank" rel="noopener noreferrer">
+                    <img id="coloredIg" src="../assets/colored_instagram.png" alt="instagram">
+                </a>
             </div>
             <div class="icon">
-                <img id="github" src="../assets/github.png" alt="github">
+                <a href="https://github.com/kenosej" target="_blank" rel="noopener noreferrer">
+                    <img id="github" src="../assets/github.png" alt="github">
+                </a>
             </div>
             <div class="icon">
                 <img id="twitter" src="../assets/twitter.png" alt="twitter">
-                <img id="coloredTwitter" src="../assets/colored_twitter.png" alt="twitter">
+                <a href="https://twitter.com/keno_sej" target="_blank" rel="noopener noreferrer">
+                    <img id="coloredTwitter" src="../assets/colored_twitter.png" alt="twitter">
+                </a>
             </div>
             <div class="icon">
                 <img id="gmail" src="../assets/gmail.png" alt="gmail">
-                <img id="coloredGmail" src="../assets/colored_gmail.png" alt="gmail">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com" target="_blank"
+                   rel="noopener noreferrer">
+                    <img id="coloredGmail" src="../assets/colored_gmail.png" alt="gmail">
+                </a>
             </div>
         </div>
         <div class="about">
@@ -61,6 +70,13 @@
     }
 
     .icons .icon > img {
+        max-height: 20vh;
+        width: 1.7em;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .icons .icon a > img {
         max-height: 20vh;
         width: 1.7em;
         position: absolute;
