@@ -80,4 +80,10 @@
             font-size: 28px;
         }
     }
+
+    @media screen and (min-width: 768px) and (max-width: 1200px) and (orientation:landscape) {
+        .mail {
+            margin-bottom: 0 !important;
+        }
+    }
 </style>
