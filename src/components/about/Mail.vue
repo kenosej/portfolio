@@ -3,12 +3,12 @@
         <h1>CONTACT</h1>
         <div class="mailDiv">
             <a id="anchorImg" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com"
-               target="_blank" rel="noopener noreferrer">
+               target="_blank" rel="noopener noreferrer" @click="gmailAboutClick">
                 <img id="coloredMail" src="../../assets/colored_gmail.png" alt="gmail">
             </a>
             <img id="classicMail" src="../../assets/gmail.png" alt="gmail">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com" target="_blank"
-               rel="noopener noreferrer">
+               rel="noopener noreferrer" @click="gmailAboutClick">
                 <span>kenosej.business@gmail.com</span>
             </a>
         </div>
@@ -17,7 +17,17 @@
 
 <script>
     export default {
-        name: "Mail"
+        name: "Mail",
+        data() {
+            return {
+                timeSpent: Math.floor(+new Date() / 1000) - this.$time
+            }
+        },
+        methods: {
+            gmailAboutClick() {
+                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&gmailAboutClick=1`)
+            }
+        }
     }
 </script>
 

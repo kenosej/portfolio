@@ -1,19 +1,31 @@
 <template>
     <div class="footer">
         <div class="pic">
-            <img src="../../assets/profile.jpg" alt="profilePhoto">
+            <img src="../../assets/profile.jpg" alt="profilePhoto" @click="imgClick">
             <span>Quality isn't expensive, it's priceless!</span>
         </div>
         <div class="arrow">
             <!--            <router-link to="/services"><img src="../../assets/arrow.png" alt="arrow"></router-link>-->
-            <router-link to="/services"><img src="../../assets/arrow.png" alt="arrow"></router-link>
+            <router-link to="/services">
+                <img src="../../assets/arrow.png" alt="arrow">
+            </router-link>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Footer"
+        name: "Footer",
+        data() {
+            return {
+                timeSpent: Math.floor(+new Date() / 1000) - this.$time
+            }
+        },
+        methods: {
+            imgClick() {
+                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&imgClick=1`)
+            }
+        }
     }
 </script>
 

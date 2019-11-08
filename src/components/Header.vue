@@ -3,25 +3,25 @@
         <div class="icons">
             <div class="icon">
                 <img id="ig" src="../assets/instagram.png" alt="instagram">
-                <a href="https://instagram.com/keno_sej" target="_blank" rel="noopener noreferrer">
+                <a href="https://instagram.com/keno_sej" target="_blank" rel="noopener noreferrer" @click="igClick">
                     <img id="coloredIg" src="../assets/colored_instagram.png" alt="instagram">
                 </a>
             </div>
             <div class="icon">
-                <a href="https://github.com/kenosej" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/kenosej" target="_blank" rel="noopener noreferrer" @click="githubClick">
                     <img id="github" src="../assets/github.png" alt="github">
                 </a>
             </div>
             <div class="icon">
                 <img id="twitter" src="../assets/twitter.png" alt="twitter">
-                <a href="https://twitter.com/keno_sej" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/keno_sej" target="_blank" rel="noopener noreferrer" @click="twitterClick">
                     <img id="coloredTwitter" src="../assets/colored_twitter.png" alt="twitter">
                 </a>
             </div>
             <div class="icon">
                 <img id="gmail" src="../assets/gmail.png" alt="gmail">
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com" target="_blank"
-                   rel="noopener noreferrer">
+                   rel="noopener noreferrer" @click="gmailClick">
                     <img id="coloredGmail" src="../assets/colored_gmail.png" alt="gmail">
                 </a>
             </div>
@@ -37,6 +37,25 @@
         name: "Header",
         props: {
             about: Boolean
+        },
+        data() {
+          return {
+              timeSpent: Math.floor(+new Date()/1000) - this.$time
+          }
+        },
+        methods: {
+            igClick() {
+                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&igClick=1`)
+            },
+            githubClick() {
+                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&githubClick=1`)
+            },
+            twitterClick() {
+                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&twitterClick=1`)
+            },
+            gmailClick() {
+                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&gmailClick=1`)
+            }
         }
     }
 </script>

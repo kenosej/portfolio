@@ -18,12 +18,120 @@
         components: {
             Header
         },
+        data() {
+            return {
+                browserInfo:
+                    navigator.browserInfo = (function () {
+                        let output, tem, ua;
+                        ua = navigator.userAgent;
+                        tem = void 0;
+
+                        output = ua.match(/(android)\s([0-9.]*)/i) || ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+
+                        if (/android/i.test(output[1])) {
+                            return {
+                                name: 'android',
+                                version: parseInt(output[2])
+                            };
+                        }
+
+                        if (/trident/i.test(output[1])) {
+                            tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+                            return {
+                                name: 'ie',
+                                version: parseInt(tem[1]) || ''
+                            };
+                        }
+
+                        if (output[1] === 'Chrome') {
+                            tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+                            if (tem !== null) {
+                                return {
+                                    name: tem[1].replace('OPR', 'opera'),
+                                    version: parseInt(tem[2])
+                                };
+                            }
+                        }
+
+                        output = output[2] ? [output[1], output[2]] : [navigator.appName, navigator.appVersion, '-?'];
+
+                        if ((tem = ua.match(/version\/(\d+)/i)) !== null) {
+                            output.splice(1, 1, tem[1]);
+                        }
+
+                        return {
+                            name: output[0].toLowerCase(),
+                            version: parseInt(output[1])
+                        };
+                    })().name,
+                userOS: (() => {
+                    let OSName = "Unknown OS";
+
+                    if (navigator.appVersion.indexOf("Win") != -1) OSName = "Windows";
+
+                    if (navigator.appVersion.indexOf("Mac") != -1) OSName = "MacOS";
+
+                    if (navigator.appVersion.indexOf("X11") != -1) OSName = "UNIX";
+
+                    if (navigator.appVersion.indexOf("Linux") != -1) OSName = "Linux";
+
+                    return OSName;
+                })(),
+                userPhone: (() => {
+                    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                })(),
+                userLang: (() => {
+                    return window.navigator.language;
+                })(),
+                userReferrer: (() => {
+                    return document.referrer;
+                })(),
+                userHistoryNum: (() => {
+                    return history.length;
+                })(),
+                userScreenWidth: (() => {
+                    return screen.width;
+                })()
+
+            }
+        },
         watch: {
             $route(to, from) {
                 this.isAbout = to.name === "about";
                 this.goingTo = to.name;
                 this.comingFrom = from.name;
             }
+        },
+        created() {
+            const userData =
+                {
+                    id: this.$id,
+                    info: {
+                        browser: this.browserInfo,
+                        system: this.userOs,
+                        phone: this.userPhone,
+                        language: this.userLang,
+                        referrer: this.userReferrer,
+                        history: this.userHistoryNum,
+                        screenSize: this.userScreenWidth,
+                        time: this.$time,
+                        instagram: 0,
+                        github: 0,
+                        twitter: 0,
+                        gmail: 0,
+                        about: 0,
+                        image: 0,
+                        right: 0,
+                        gmailAbout: 0,
+                        toHome: 0,
+                        gmailServices: 0,
+                        timeSpent: 0
+                    }
+                };
+
+            fetch(`http://test123.com/info.php?firstInfo=${JSON.stringify(userData)}`)
+                .then(e => e.text())
+                .then(a => a)
         }
     }
 </script>

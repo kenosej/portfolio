@@ -28,6 +28,9 @@
             Skills,
             Contact,
             Ending
+        },
+        created() {
+            fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&rightClick=1`)
         }
     }
 </script>

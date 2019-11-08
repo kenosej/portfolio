@@ -4,13 +4,13 @@
         <div class="mail">
             <div class="icon">
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com"
-                   target="_blank" rel="noopener noreferrer">
+                   target="_blank" rel="noopener noreferrer" @click="gmailServicesClick">
                     <img id="coloredGmail" src="../../assets/colored_gmail.png" alt="gmail">
                 </a>
                 <img id="classicGmail" src="../../assets/gmail.png" alt="gmail">
                 <span>
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com"
-                       target="_blank" rel="noopener noreferrer">kenosej.business@gmail.com</a>
+                       target="_blank" rel="noopener noreferrer" @click="gmailServicesClick">kenosej.business@gmail.com</a>
                 </span>
             </div>
         </div>
@@ -19,7 +19,17 @@
 
 <script>
     export default {
-        name: "Contact"
+        name: "Contact",
+        data() {
+            return {
+                timeSpent: Math.floor(+new Date() / 1000) - this.$time
+            }
+        },
+        methods: {
+            gmailServicesClick() {
+                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&gmailServicesClick=1`)
+            }
+        }
     }
 </script>
 
