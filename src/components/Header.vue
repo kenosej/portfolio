@@ -38,23 +38,18 @@
         props: {
             about: Boolean
         },
-        data() {
-          return {
-              timeSpent: Math.floor(+new Date()/1000) - this.$time
-          }
-        },
         methods: {
             igClick() {
-                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&igClick=1`)
+                fetch(`http://test123.com/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&igClick=1`);
             },
             githubClick() {
-                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&githubClick=1`)
+                fetch(`http://test123.com/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&githubClick=1`)
             },
             twitterClick() {
-                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&twitterClick=1`)
+                fetch(`http://test123.com/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&twitterClick=1`)
             },
             gmailClick() {
-                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&gmailClick=1`)
+                fetch(`http://test123.com/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&gmailClick=1`)
             }
         }
     }

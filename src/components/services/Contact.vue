@@ -27,7 +27,7 @@
         },
         methods: {
             gmailServicesClick() {
-                fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&gmailServicesClick=1`)
+                fetch(`http://test123.com/data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&gmailServicesClick=1`)
             }
         }
     }
