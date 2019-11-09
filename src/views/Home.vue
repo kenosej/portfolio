@@ -26,8 +26,6 @@
         },
         created() {
             fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&homeCreated=1`)
-                .then(e => e.text())
-                .then(a => alert(a))
         }
     }
 </script>

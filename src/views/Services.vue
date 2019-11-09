@@ -29,6 +29,11 @@
             Contact,
             Ending
         },
+        data() {
+            return {
+                timeSpent: Math.floor(+new Date() / 1000) - this.$time
+            }
+        },
         created() {
             fetch(`http://test123.com/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&rightClick=1`)
         }
