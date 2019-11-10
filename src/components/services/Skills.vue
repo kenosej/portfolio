@@ -18,7 +18,7 @@
         <div class="right">
             <div class="projects">
                 <h1>PROJECTS</h1>
-                <p><span id="winitgram">•</span> winitgram.com</p>
+                <p><span id="winitgram">•</span> <a href="https://winitgram.com" target="_blank">winitgram.com</a></p>
                 <p><span id="tech">•</span> keno-sej.tech</p>
             </div>
             <div class="learning">
@@ -117,6 +117,11 @@
     .projects {
         position: relative;
         margin: 0.5em auto 0;
+    }
+
+    .projects a {
+        text-decoration: none;
+        color: #BBB9B9;
     }
 
     .projects h1 {
