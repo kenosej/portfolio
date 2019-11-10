@@ -30,7 +30,7 @@
             }
         },
         created() {
-            fetch(`http://test123.com/data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&aboutCreated=1`)
+            fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&aboutCreated=1`)
         }
     }
 </script>
