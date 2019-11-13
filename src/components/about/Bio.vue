@@ -65,7 +65,6 @@
     .bio {
         text-align: center;
         position: relative;
-        margin-top: 1em;
     }
 
     .bio:before {
@@ -81,7 +80,7 @@
     }
 
     .bio h1 {
-        margin-top: 0.5em;
+        margin-top: 1em;
         font-family: "Open Sans Regular", serif;
         font-size: 18px;
     }
