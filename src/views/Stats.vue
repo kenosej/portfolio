@@ -176,7 +176,7 @@
                 return Math.round(value * 10) / 10;
             },
             async getJson() {
-                let response = await fetch('https://keno-sej.tech//data/userData.json');
+                let response = await fetch('https://keno-sej.tech/data/userData.json');
                 let data = await response.json();
                 return data;
             },

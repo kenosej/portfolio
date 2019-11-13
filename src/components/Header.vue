@@ -40,16 +40,16 @@
         },
         methods: {
             igClick() {
-                fetch(`https://keno-sej.tech//data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&igClick=1`);
+                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&igClick=1`);
             },
             githubClick() {
-                fetch(`https://keno-sej.tech//data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&githubClick=1`)
+                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&githubClick=1`)
             },
             twitterClick() {
-                fetch(`https://keno-sej.tech//data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&twitterClick=1`)
+                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&twitterClick=1`)
             },
             gmailClick() {
-                fetch(`https://keno-sej.tech//data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&gmailClick=1`)
+                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&gmailClick=1`)
             }
         }
     }

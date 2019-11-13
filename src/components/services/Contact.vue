@@ -27,7 +27,7 @@
         },
         methods: {
             gmailServicesClick() {
-                fetch(`https://keno-sej.tech//data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&gmailServicesClick=1`)
+                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&gmailServicesClick=1`)
             }
         }
     }

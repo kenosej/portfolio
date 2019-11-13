@@ -35,7 +35,7 @@
             }
         },
         created() {
-            fetch(`https://keno-sej.tech//data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&rightClick=1`)
+            fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&rightClick=1`)
         }
     }
 </script>
