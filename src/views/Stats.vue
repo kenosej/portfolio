@@ -1,0 +1,362 @@
+<template>
+    <div class="stats">
+        <div class="login"
+             v-bind:class="{invisible: displayStats}">
+            <input type="password"
+                   id="psw1"
+                   v-on:keyup="login"
+                   v-model="inputPsw">
+        </div>
+        <div class="statistics"
+             v-bind:class="{invisible: !displayStats}">
+            <div class="left">
+                <p>Times opened with chrome: <span>{{totalChrome}}</span></p>
+                <p>Times opened with firefox: <span>{{totalFirefox}}</span></p>
+                <p>Times opened with opera: <span>{{totalOpera}}</span></p>
+                <p>Times opened with safari: <span>{{totalSafari}}</span></p>
+                <p>Times opened with phone: <span>{{totalPhone}}</span></p>
+                <p>Times not opened with phone: <span>{{totalNotPhone}}</span></p>
+                <p>Lang en-GB: <span>{{totalLandEnGB}}</span></p>
+                <p>Average history: <span>{{avgHistory}}</span></p>
+                <p>Total big screens: <span>{{totalBigScreens}}</span></p>
+                <p>Total middle screens: <span>{{totalMiddleScreens}}</span></p>
+                <p>Total small screens: <span>{{totalSmallScreens}}</span></p>
+                <p>Time between 00:00-03:00: <span>{{totalFrom0To3}}</span></p>
+                <p>Time between 03:00-06:00: <span>{{totalFrom3To6}}</span></p>
+                <p>Time between 06:00-09:00: <span>{{totalFrom6To9}}</span></p>
+                <p>Time between 09:00-12:00: <span>{{totalFrom9To12}}</span></p>
+                <p>Time between 12:00-15:00: <span>{{totalFrom12To15}}</span></p>
+                <p>Time between 15:00-18:00: <span>{{totalFrom15To18}}</span></p>
+                <p>Time between 18:00-21:00: <span>{{totalFrom18To21}}</span></p>
+                <p>Time between 21:00-00:00: <span>{{totalFrom21To24}}</span></p>
+                <p>Instagram total pressed: <span>{{totalInstagram}}</span></p>
+                <p>Average instagram pressed per user: <span>{{avgInstagram}}</span></p>
+                <p>Github total pressed: <span>{{totalGithub}}</span></p>
+                <p>Average Github pressed per user: <span>{{avgGithub}}</span></p>
+                <p>Twitter total pressed: <span>{{totalTwitter}}</span></p>
+                <p>Average Twitter pressed per user: <span>{{avgTwitter}}</span></p>
+            </div>
+            <div class="right">
+                <p>Gmail total pressed: <span>{{totalGmail}}</span></p>
+                <p>Average Gmail pressed per user: <span>{{avgGmail}}</span></p>
+                <p>About total pressed: <span>{{totalAbout}}</span></p>
+                <p>Average About pressed per user: <span>{{avgAbout}}</span></p>
+                <p>Image total pressed: <span>{{totalImage}}</span></p>
+                <p>Average image pressed per user: <span>{{avgImage}}</span></p>
+                <p>Right total pressed: <span>{{totalRight}}</span></p>
+                <p>Average right pressed per user: <span>{{avgRight}}</span></p>
+                <p>Gmail from about total pressed: <span>{{totalGmailFromAbout}}</span></p>
+                <p>Average Gmail from about per user: <span>{{avgGmailFromAbout}}</span></p>
+                <p>Back to home total: <span>{{totalToHome}}</span></p>
+                <p>Average Back to home pressed per user: <span>{{avgToHome}}</span></p>
+                <p>Gmail from services total pressed: <span>{{totalGmailFromServices}}</span></p>
+                <p>Average Gmail from services pressed per user: <span>{{avgGmailFromServices}}</span></p>
+                <p>Total time spent: <span>{{totalTimeSpent}}s ({{totalTimeSpentFormatted}})</span></p>
+                <p>Average time spent per user: <span>{{avgTimeSpent}}</span></p>
+                <p>Views last 1h: <span>{{viewsLast1h}}</span></p>
+                <p>Views last 3h: <span>{{viewsLast3h}}</span></p>
+                <p>Views last 24h: <span>{{viewsLast24h}}</span></p>
+                <p>Views last 3 days: <span>{{viewsLast3d}}</span></p>
+                <p>Views last 7 days: <span>{{viewsLast7d}}</span></p>
+                <p>Views last 10 days: <span>{{viewsLast10d}}</span></p>
+                <p>Views last 15 days: <span>{{viewsLast15d}}</span></p>
+                <p>Views last 30 days: <span>{{viewsLast30d}}</span></p>
+                <p>Views total: <span>{{totalViews}}</span></p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "Stats",
+        data() {
+            return {
+                inputPsw: '',
+                displayStats: false,
+                totalChrome: 0,
+                totalFirefox: 0,
+                totalOpera: 0,
+                totalSafari: 0,
+                totalPhone: 0,
+                totalNotPhone: 0,
+                totalLandEnGB: 0,
+                avgHistory: 0,
+                totalBigScreens: 0,
+                totalMiddleScreens: 0,
+                totalSmallScreens: 0,
+                totalFrom0To3: 0,
+                totalFrom3To6: 0,
+                totalFrom6To9: 0,
+                totalFrom9To12: 0,
+                totalFrom12To15: 0,
+                totalFrom15To18: 0,
+                totalFrom18To21: 0,
+                totalFrom21To24: 0,
+                totalInstagram: 0,
+                totalGithub: 0,
+                totalTwitter: 0,
+                totalGmail: 0,
+                totalAbout: 0,
+                totalImage: 0,
+                totalRight: 0,
+                totalGmailFromAbout: 0,
+                totalToHome: 0,
+                totalGmailFromServices: 0,
+                totalTimeSpent: 0,
+                viewsLast1h: 0,
+                viewsLast3h: 0,
+                viewsLast24h: 0,
+                viewsLast3d: 0,
+                viewsLast7d: 0,
+                viewsLast10d: 0,
+                viewsLast15d: 0,
+                viewsLast30d: 0,
+                totalViews: 0,
+            }
+        },
+        computed: {
+            avgInstagram() {
+                return this.roundNum(this.totalInstagram / this.totalViews);
+            },
+            avgGithub() {
+                return this.roundNum(this.totalGithub / this.totalViews);
+            },
+            avgTwitter() {
+                return this.roundNum(this.totalTwitter / this.totalViews);
+            },
+            avgGmail() {
+                return this.roundNum(this.totalGmail / this.totalViews);
+            },
+            avgAbout() {
+                return this.roundNum(this.totalAbout / this.totalViews);
+            },
+            avgImage() {
+                return this.roundNum(this.totalImage / this.totalViews);
+            },
+            avgRight() {
+                return this.roundNum(this.totalRight / this.totalViews);
+            },
+            avgGmailFromAbout() {
+                return this.roundNum(this.totalGmailFromAbout / this.totalViews);
+            },
+            avgGmailFromServices() {
+                return this.roundNum(this.totalGmailFromServices / this.totalViews);
+            },
+            avgToHome() {
+                return this.roundNum(this.totalToHome / this.totalViews);
+            },
+            avgTimeSpent() {
+                return this.roundNum(this.totalTimeSpent / this.totalViews);
+            },
+            totalTimeSpentFormatted() {
+                if (this.roundNum(this.totalTimeSpent / 60) < 60) {
+                    return this.roundNum(this.totalTimeSpent / 60) + "m";
+                } else {
+                    let hours = 0,
+                        minutes = 0;
+
+                    for (let i = 3600; i < this.totalTimeSpent; i+=3600) {
+                        hours += 1;
+                        minutes = this.totalTimeSpent - i;
+                    }
+
+                    return hours + "h and " + this.roundNum(minutes / 60) + "m";
+                }
+            }
+        },
+        methods: {
+            login() {
+                if (this.inputPsw === "congratsBro") {
+                    this.displayStats = true;
+                    this.fillData();
+                }
+            },
+            roundNum(value) {
+                return Math.round(value * 10) / 10;
+            },
+            async getJson() {
+                let response = await fetch('https://keno-sej.tech//data/userData.json');
+                let data = await response.json();
+                return data;
+            },
+            async fillData() {
+                await this.getJson().then(data => {
+                    this.totalViews += data.views.length;
+
+                    data.views.forEach(e => {
+                        if (e.info.browser === "chrome") {
+                            this.totalChrome++;
+                        }
+                        if (e.info.browser === "firefox") {
+                            this.totalFirefox++;
+                        }
+                        if (e.info.browser === "opera") {
+                            this.totalOpera++;
+                        }
+                        if (e.info.browser === "safari") {
+                            this.totalSafari++;
+                        }
+                        if (e.info.phone) {
+                            this.totalPhone++;
+                        }
+                        if (!e.info.phone) {
+                            this.totalNotPhone++;
+                        }
+                        if (e.info.language === "en-US") {
+                            this.totalLandEnGB++;
+                        }
+                        if (e.info.screenSize > 1200) {
+                            this.totalBigScreens++;
+                        }
+                        if (e.info.screenSize > 768 &&
+                            e.info.screenSize < 1200) {
+                            this.totalMiddleScreens++;
+                        }
+                        if (e.info.screenSize < 768) {
+                            this.totalSmallScreens++;
+                        }
+                        let date = new Date(e.info.time * 1000);
+                        let hours = date.getHours() - 1;
+
+                        if (hours > 0 && hours <= 3) {
+                            this.totalFrom0To3++;
+                        }
+                        if (hours > 3 && hours <= 6) {
+                            this.totalFrom3To6++;
+                        }
+                        if (hours > 6 && hours <= 9) {
+                            this.totalFrom6To9++;
+                        }
+                        if (hours > 9 && hours <= 12) {
+                            this.totalFrom9To12++;
+                        }
+                        if (hours > 12 && hours <= 15) {
+                            this.totalFrom12To15++;
+                        }
+                        if (hours > 15 && hours <= 18) {
+                            this.totalFrom15To18++;
+                        }
+                        if (hours > 18 && hours <= 21) {
+                            this.totalFrom18To21++;
+                        }
+                        if (hours > 21 && hours <= 24) {
+                            this.totalFrom21To24++;
+                        }
+
+                        if ((Math.floor(+new Date() / 1000) - e.info.time) < 3600) {
+                            this.viewsLast1h++;
+                        }
+
+                        if ((Math.floor(+new Date() / 1000) - e.info.time) < 10800) {
+                            this.viewsLast3h++;
+                        }
+
+                        if ((Math.floor(+new Date() / 1000) - e.info.time) < 86400) {
+                            this.viewsLast24h++;
+                        }
+
+                        if ((Math.floor(+new Date() / 1000) - e.info.time) < 259200) {
+                            this.viewsLast3d++;
+                        }
+
+                        if ((Math.floor(+new Date() / 1000) - e.info.time) < 604800) {
+                            this.viewsLast7d++;
+                        }
+
+                        if ((Math.floor(+new Date() / 1000) - e.info.time) < 864000) {
+                            this.viewsLast10d++;
+                        }
+
+                        if ((Math.floor(+new Date() / 1000) - e.info.time) < 1296000) {
+                            this.viewsLast15d++;
+                        }
+
+                        if ((Math.floor(+new Date() / 1000) - e.info.time) < 2592000) {
+                            this.viewsLast30d++;
+                        }
+
+                        this.totalInstagram += e.info.instagram;
+                        this.totalGithub += e.info.github;
+                        this.totalTwitter += e.info.twitter;
+                        this.totalGmail += e.info.gmail;
+                        this.totalAbout += e.info.about;
+                        this.totalImage += e.info.image;
+                        this.totalRight += e.info.right;
+                        this.totalGmailFromAbout += e.info.gmailAbout;
+                        this.totalToHome += e.info.toHome;
+                        this.totalGmailFromServices += e.info.gmailServices;
+                        this.totalTimeSpent += e.info.timeSpent;
+
+                        this.avgHistory += e.info.history;
+                    });
+
+                    this.avgHistory = Math.round(this.avgHistory / this.totalViews) / 10;
+                })
+            }
+        },
+    }
+</script>
+
+<style scoped>
+    .invisible {
+        display: none !important;
+    }
+
+    .login {
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .stats input {
+        background: #333333;
+        border-color: #333333;
+        outline: none;
+    }
+
+    .statistics {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+
+    .statistics span {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .statistics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            font-size: 16px;
+            margin-left: 8px;
+        }
+
+        .left, .right {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .stats {
+            height: 90vh;
+            overflow: hidden;
+        }
+
+        .statistics span {
+            display: inline-block;
+            margin-bottom: 0;
+            margin-left: 3px;
+        }
+
+        .left, .right {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+</style>

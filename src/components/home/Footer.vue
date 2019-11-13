@@ -22,7 +22,7 @@
         },
         methods: {
             imgClick() {
-                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&imgClick=1`)
+                fetch(`https://keno-sej.tech//data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&imgClick=1`)
             }
         }
     }
