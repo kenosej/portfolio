@@ -65,6 +65,12 @@
     .bio {
         text-align: center;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 623px;
+        margin-top: 15px;
     }
 
     .bio:before {
@@ -80,14 +86,13 @@
     }
 
     .bio h1 {
-        margin-top: 1em;
         font-family: "Open Sans Regular", serif;
         font-size: 18px;
+        margin-bottom: 25px;
     }
 
     .bio p {
         line-height: 1.8;
-        margin-top: 1.2em;
     }
 
     .bio p span {
@@ -104,14 +109,13 @@
         }
 
         .bio {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             margin-top: 2%;
+            min-height: 0;
         }
 
         .bio h1 {
             font-size: 22px;
+            margin-bottom: 0;
         }
 
         .bio p {

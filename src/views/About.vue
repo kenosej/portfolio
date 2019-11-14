@@ -37,23 +37,17 @@
 
 <style>
     #about {
-        height: 833px;
+        min-height: 863px;
         display: grid;
-        grid-auto-rows: 70% 18% 12%;
+        grid-auto-rows: 623px 160px 107px;
         width: 100%;
-    }
-
-    @media only screen and (max-width: 346px) {
-        #about {
-            height: 100%;
-            min-height: 833px;
-        }
     }
 
     @media only screen and (min-width: 768px) {
         #about {
             height: 90vh;
             grid-auto-rows: 75% 15% 10%;
+            min-height: 0;
         }
     }
 

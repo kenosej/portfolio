@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Services from "../views/Services";
-import Stats from "../views/Stats";
 
 Vue.use(VueRouter)
 
@@ -28,7 +27,7 @@ const routes = [
   {
     path: '/stats',
     name: 'stats',
-    component: Stats
+    component: () => import('../views/Stats')
   }
 ]
 
