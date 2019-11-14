@@ -301,6 +301,15 @@
         }
     }
 
+    @-moz-document url-prefix() {
+        @media only screen and (min-width: 768px) {
+            .bubble:before {
+                height: 2px;
+                left: 96%;
+            }
+        }
+    }
+
     @media only screen and (min-width: 1200px) {
         .name h2 {
             font-size: 93px;

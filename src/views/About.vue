@@ -43,6 +43,13 @@
         width: 100%;
     }
 
+    @media only screen and (max-width: 346px) {
+        #about {
+            height: 100%;
+            min-height: 833px;
+        }
+    }
+
     @media only screen and (min-width: 768px) {
         #about {
             height: 90vh;
