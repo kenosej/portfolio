@@ -117,37 +117,37 @@
         },
         computed: {
             avgInstagram() {
-                return this.roundNum(this.totalInstagram / this.totalViews);
+                return this.roundAverage(this.totalInstagram);
             },
             avgGithub() {
-                return this.roundNum(this.totalGithub / this.totalViews);
+                return this.roundAverage(this.totalGithub);
             },
             avgTwitter() {
-                return this.roundNum(this.totalTwitter / this.totalViews);
+                return this.roundAverage(this.totalTwitter);
             },
             avgGmail() {
-                return this.roundNum(this.totalGmail / this.totalViews);
+                return this.roundAverage(this.totalGmail);
             },
             avgAbout() {
-                return this.roundNum(this.totalAbout / this.totalViews);
+                return this.roundAverage(this.totalAbout);
             },
             avgImage() {
-                return this.roundNum(this.totalImage / this.totalViews);
+              return this.roundAverage(this.totalImage);
             },
             avgRight() {
-                return this.roundNum(this.totalRight / this.totalViews);
+                return this.roundAverage(this.totalRight);
             },
             avgGmailFromAbout() {
-                return this.roundNum(this.totalGmailFromAbout / this.totalViews);
+                return this.roundAverage(this.totalGmailFromAbout);
             },
             avgGmailFromServices() {
-                return this.roundNum(this.totalGmailFromServices / this.totalViews);
+                return this.roundAverage(this.totalGmailFromServices);
             },
             avgToHome() {
-                return this.roundNum(this.totalToHome / this.totalViews);
+                return this.roundAverage(this.totalToHome);
             },
             avgTimeSpent() {
-                return this.roundNum(this.totalTimeSpent / this.totalViews);
+                return this.roundAverage(this.totalTimeSpent);
             },
             totalTimeSpentFormatted() {
                 if (this.roundNum(this.totalTimeSpent / 60) < 60) {
@@ -156,7 +156,7 @@
                     let hours = 0,
                         minutes = 0;
 
-                    for (let i = 3600; i < this.totalTimeSpent; i+=3600) {
+                    for (let i = 3600; i < this.totalTimeSpent; i += 3600) {
                         hours += 1;
                         minutes = this.totalTimeSpent - i;
                     }
@@ -175,13 +175,16 @@
             roundNum(value) {
                 return Math.round(value * 10) / 10;
             },
+            roundAverage(value) {
+                return Math.round((value / this.totalViews) * 10) / 10;
+            },
             async getJson() {
                 let response = await fetch('https://keno-sej.tech/data/userData.json');
                 let data = await response.json();
                 return data;
             },
             async fillData() {
-                await this.getJson().then(data => {
+                this.getJson().then(data => {
                     this.totalViews += data.views.length;
 
                     data.views.forEach(e => {
@@ -276,22 +279,34 @@
                             this.viewsLast30d++;
                         }
 
-                        this.totalInstagram += e.info.instagram;
-                        this.totalGithub += e.info.github;
-                        this.totalTwitter += e.info.twitter;
-                        this.totalGmail += e.info.gmail;
-                        this.totalAbout += e.info.about;
-                        this.totalImage += e.info.image;
-                        this.totalRight += e.info.right;
-                        this.totalGmailFromAbout += e.info.gmailAbout;
-                        this.totalToHome += e.info.toHome;
-                        this.totalGmailFromServices += e.info.gmailServices;
-                        this.totalTimeSpent += e.info.timeSpent;
-
-                        this.avgHistory += e.info.history;
+                        if (e.info.instagram !== undefined)
+                            this.totalInstagram += e.info.instagram;
+                        if (e.info.github !== undefined)
+                            this.totalGithub += e.info.github;
+                        if (e.info.twitter !== undefined)
+                            this.totalTwitter += e.info.twitter;
+                        if (e.info.gmail !== undefined)
+                            this.totalGmail += e.info.gmail;
+                        if (e.info.about !== undefined)
+                            this.totalAbout += e.info.about;
+                        if (e.info.image !== undefined)
+                            this.totalImage += e.info.image;
+                        if (e.info.right !== undefined)
+                            this.totalRight += e.info.right;
+                        if (e.info.gmailAbout !== undefined)
+                            this.totalGmailFromAbout += e.info.gmailAbout;
+                        if (e.info.toHome !== undefined)
+                            this.totalToHome += e.info.toHome;
+                        if (e.info.gmailServices !== undefined)
+                            this.totalGmailFromServices += e.info.gmailServices;
+                        if (e.info.timeSpent !== undefined)
+                            this.totalTimeSpent += e.info.timeSpent;
+                        if (e.info.history !== undefined) {
+                            this.avgHistory += e.info.history;
+                        }
                     });
 
-                    this.avgHistory = Math.round(this.avgHistory / this.totalViews) / 10;
+                    this.avgHistory = this.roundAverage(this.avgHistory);
                 })
             }
         },
