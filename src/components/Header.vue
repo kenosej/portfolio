@@ -163,6 +163,12 @@
         }
     }
 
+    @media only screen and (max-width: 815px) and (orientation: landscape) {
+        .about {
+            margin-right: 3em;
+        }
+    }
+
     @media only screen and (min-width: 1200px) {
         .about {
             font-size: 22px;

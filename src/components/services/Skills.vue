@@ -10,6 +10,7 @@
                 <p><span id="jquery">•</span> JQUERY</p>
                 <p><span id="css">•</span> CSS3</p>
                 <p><span id="javascript">•</span> JAVASCRIPT</p>
+                <p><span id="vue">•</span> VUE.JS</p>
                 <p><span id="sql">•</span> SQL</p>
                 <p><span id="xd">•</span> ADOBE XD</p>
                 <p><span id="linux">•</span> LINUX</p>
@@ -24,7 +25,6 @@
             <div class="learning">
                 <h1>LEARNING</h1>
                 <p><span id="node">•</span> NODE.JS</p>
-                <p><span id="vue">•</span> VUE.JS</p>
                 <p><span id="wp">•</span> WORDPRESS</p>
                 <p><span id="laravel">•</span> LARAVEL</p>
             </div>
@@ -102,6 +102,10 @@
         color: #F0DB4F;
     }
 
+    .languages p #vue {
+        color: #41B883;
+    }
+
     .languages p #sql {
         color: #F8981D;
     }
@@ -161,10 +165,6 @@
 
     .learning p #node {
         color: #83CD29;
-    }
-
-    .learning p #vue {
-        color: #41B883;
     }
 
     .learning p #wp {

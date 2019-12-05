@@ -136,6 +136,24 @@
         }
     }
 
+    @media only screen and (max-width: 815px) and (orientation: landscape) {
+        .arrow {
+            margin-right: 3em;
+        }
+
+        .arrow img {
+            height: 55px;
+        }
+
+        .pic img {
+            max-height: calc(19.7vh - 0.5em);
+        }
+
+        .pic span, .pic img {
+            margin-top: 0;
+        }
+    }
+
     @media only screen and (min-width: 1200px) {
         .pic {
             margin-left: 1em;

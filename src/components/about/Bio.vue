@@ -129,6 +129,12 @@
         }
     }
 
+    @media only screen and (max-width: 830px) and (min-width: 768px) and (orientation: landscape) {
+        .bio {
+            margin-top: 6%;
+        }
+    }
+
     @media only screen and (min-width: 1200px) {
         .tablet {
             display: none;

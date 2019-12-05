@@ -107,4 +107,23 @@
             padding-bottom: 0;
         }
     }
+
+    @media only screen and (max-width: 830px) and (min-width: 768px) and (orientation: landscape) {
+        .info {
+            grid-template-rows: 2fr 0;
+        }
+
+        .place {
+            margin-left: 1em;
+            position: static;
+            padding-left: 0;
+            padding-top: 0;
+        }
+
+        .school {
+            position: static;
+            margin-right: 1em;
+            padding-right: 0;
+        }
+    }
 </style>

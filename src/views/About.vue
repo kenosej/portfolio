@@ -51,6 +51,13 @@
         }
     }
 
+    @media only screen and (max-width: 830px) and (min-width: 768px) and (orientation: landscape) {
+        #about {
+            height: 100%;
+            min-height: 833px;
+        }
+    }
+
     @media only screen and (min-width: 1200px) {
         #about {
             grid-template-rows: 80vh 10vh;
