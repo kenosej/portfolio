@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" :class="[showContent ? 'activeClass' : 'inactiveClass']">
         <div id="nav">
             <Header v-bind:about="this.isAbout"/>
         </div>
@@ -91,8 +91,8 @@
                 })(),
                 userScreenWidth: (() => {
                     return screen.width;
-                })()
-
+                })(),
+                showContent: false
             }
         },
         watch: {
@@ -101,6 +101,12 @@
                 this.goingTo = to.name;
                 this.comingFrom = from.name;
             }
+        },
+        mounted() {
+            setTimeout(() => {
+                this.showContent = true;
+                document.getElementById("preloader").style.display = "none";
+            }, 1000);
         },
         created() {
             const userData =
@@ -188,6 +194,15 @@
     body {
         height: 100vh;
         max-height: 100vh;
+    }
+
+    .inactiveClass {
+        display: none;
+    }
+
+    .activeClass {
+        display: block;
+        z-index: 2;
     }
 
     #app {

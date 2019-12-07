@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description"
           content="Hello world, I'm Kenan Sejmenović and this is my portfolio website.">
+    <link rel=”canonical” href=”https://keno-sej.tech”>
     <meta property="og:title" content="Kenan Sejmenović | Portfolio">
     <meta name="og:description"
           content="Hello world, I'm Kenan Sejmenović and this is my portfolio website.">
@@ -22,12 +23,167 @@
           type="font/woff2" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>Kenan Sejmenović | Portfolio</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but portfolio doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    <style>
+        body {
+            background-color: #333333;
+        }
+
+        .semipolar-spinner, .semipolar-spinner * {
+            box-sizing: border-box;
+        }
+
+        .semipolar-spinner {
+            height: 65px;
+            width: 65px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+        }
+
+        .semipolar-spinner .ring {
+            border-radius: 50%;
+            position: absolute;
+            border: calc(65px * 0.05) solid transparent;
+            border-top-color: #41B883;
+            border-left-color: #41B883;
+            animation: semipolar-spinner-animation 2s infinite;
+        }
+
+        .semipolar-spinner .ring:nth-child(1) {
+            height: calc(65px - 65px * 0.2 * 0);
+            width: calc(65px - 65px * 0.2 * 0);
+            top: calc(65px * 0.1 * 0);
+            left: calc(65px * 0.1 * 0);
+            animation-delay: calc(2000ms * 0.1 * 4);
+            z-index: 5;
+        }
+
+        .semipolar-spinner .ring:nth-child(2) {
+            height: calc(65px - 65px * 0.2 * 1);
+            width: calc(65px - 65px * 0.2 * 1);
+            top: calc(65px * 0.1 * 1);
+            left: calc(65px * 0.1 * 1);
+            animation-delay: calc(2000ms * 0.1 * 3);
+            z-index: 4;
+        }
+
+        .semipolar-spinner .ring:nth-child(3) {
+            height: calc(65px - 65px * 0.2 * 2);
+            width: calc(65px - 65px * 0.2 * 2);
+            top: calc(65px * 0.1 * 2);
+            left: calc(65px * 0.1 * 2);
+            animation-delay: calc(2000ms * 0.1 * 2);
+            z-index: 3;
+        }
+
+        .semipolar-spinner .ring:nth-child(4) {
+            height: calc(65px - 65px * 0.2 * 3);
+            width: calc(65px - 65px * 0.2 * 3);
+            top: calc(65px * 0.1 * 3);
+            left: calc(65px * 0.1 * 3);
+            animation-delay: calc(2000ms * 0.1 * 1);
+            z-index: 2;
+        }
+
+        .semipolar-spinner .ring:nth-child(5) {
+            height: calc(65px - 65px * 0.2 * 4);
+            width: calc(65px - 65px * 0.2 * 4);
+            top: calc(65px * 0.1 * 4);
+            left: calc(65px * 0.1 * 4);
+            animation-delay: calc(2000ms * 0.1 * 0);
+            z-index: 1;
+        }
+
+        @keyframes semipolar-spinner-animation {
+            50% {
+                transform: rotate(360deg) scale(0.7);
+            }
+        }
+
+        .SEO-text {
+            color: #333333;
+            z-index: 1;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="semipolar-spinner" id="preloader">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+</div>
+<div class="SEO-text">
+    <h1>
+        Hello world
+        I'm Kenan Sejmenović
+        Full Stack Web Developer
+    </h1>
+    <p>
+        Quality isn't expensive, it's priceless!
+    </p>
+    <h1>ABOUT ME</h1>
+    <p>
+        I'm 18 and already found my passion.
+        I've been working on the web for almost 2 years.
+        Web development and helping people achieve their goals through digital services is one of my missions.
+        Working every waking hour and making things better is what excites me.
+        Do you need any of the services that I offer?
+        Understanding your "why" and improving your business is what you can find here.
+        You can change the world and I can help you achieve it.
+        Don't fall behind with cheaper alternatives that won't meet your requirements.
+        I stand behind the work that I do and nothing than quality will be served.
+        Contact me for collaboration.
+        We will make things better!
+        Maglaj, BiH, Europe
+        Gymnasium "Edhem Mulabdić" - 2020
+        B.SE. - 2024
+        CONTACT
+    </p>
+    <h1>SKILLS</h1>
+    <p>
+        PHP
+        JQUERY
+        CSS3
+        JAVASCRIPT
+        VUE.JS
+        SQL
+        ADOBE XD
+        LINUX
+        LEARNING
+        NODE.JS
+        WORDPRESS
+        LARAVEL
+    </p>
+    <h1>WHAT CAN I DO FOR YOU:</h1>
+    <p>
+        MAKE ENTIRE WEBSITE FROM SCRATCH
+        BACK-END / FRONT-END
+        FIND AND RESOLVE BUGS
+        FROM OLD PHP TO PHP 7.3.11
+        OPTIMIZE PAGE LOAD SPEED
+        CONFIGURE/OPTIMISE DATABASE
+        ENHANCE SEO
+        CONVERT TO HTML/CSS/JS (FROM PSD...)
+        MAKE WEBSITE RESPONSIVE
+        DESIGN WEBSITE IN ADOBE XD
+    </p>
+    <h1>PROJECTS</h1>
+    <p>
+        winitgram.com
+        keno-sej.tech
+    </p>
+</div>
+<noscript>
+    <strong>
+        We're sorry but portfolio doesn't work properly without JavaScript enabled. Please enable it to
+        continue.
+    </strong>
+</noscript>
+<div id="app"></div>
+</body>
 </html>
