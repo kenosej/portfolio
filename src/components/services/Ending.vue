@@ -1,7 +1,7 @@
 <template>
     <div class="ending">
         <h2>MAKING WEB BETTER!</h2>
-        <span>Made with Vue | © - 2019</span>
+        <span>Made with Vue | © - 2019, 2020</span>
     </div>
 </template>
 
