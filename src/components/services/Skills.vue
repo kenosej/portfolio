@@ -19,7 +19,7 @@
         <div class="right">
             <div class="projects">
                 <h1>PROJECTS</h1>
-                <p><span id="winitgram">•</span> <a href="https://winitgram.com" target="_blank">winitgram.com</a></p>
+                <p><span id="winitgram">•</span><a href="https://winitgram.com" target="_blank" rel="noopener noreferrer"> winitgram.com</a></p>
                 <p><span id="tech">•</span> keno-sej.tech</p>
             </div>
             <div class="learning">

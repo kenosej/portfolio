@@ -19,6 +19,12 @@
 
     export default {
         name: "Services",
+        metaInfo: {
+            title: 'About | Portfolio',
+            meta: [
+                {name: 'description', content: "My story can be found here."}
+            ]
+        },
         components: {
             Bio,
             Info,
@@ -26,7 +32,7 @@
         },
         data() {
             return {
-                timeSpent: Math.floor(+new Date()/1000) - this.$time
+                timeSpent: Math.floor(+new Date() / 1000) - this.$time
             }
         },
         created() {

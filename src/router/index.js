@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Services from "../views/Services";
+import VueMeta from 'vue-meta'
 
 Vue.use(VueRouter)
+Vue.use(VueMeta, {
+  refreshOnceOnNavigation: true
+})
 
 const routes = [
   {
@@ -22,7 +25,7 @@ const routes = [
   {
     path: '/services',
     name: 'Services',
-    component: Services
+    component: () => import('../views/Services')
   }
 ]
 

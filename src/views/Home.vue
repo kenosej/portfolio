@@ -15,6 +15,13 @@
 
     export default {
         name: "Home",
+        metaInfo: {
+            titleTemplate: '%s | Portfolio',
+            title: 'Kenan Sejmenović',
+            meta: [
+                { name: 'description', content:  "Hello world, I'm Kenan Sejmenović and this is my portfolio website." }
+            ]
+        },
         components: {
             Middle,
             Footer
