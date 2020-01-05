@@ -20,10 +20,7 @@
     export default {
         name: "Services",
         metaInfo: {
-            title: 'About | Portfolio',
-            meta: [
-                {name: 'description', content: "My story can be found here."}
-            ]
+            title: 'About | Portfolio'
         },
         components: {
             Bio,

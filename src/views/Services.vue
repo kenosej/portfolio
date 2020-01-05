@@ -24,10 +24,7 @@
     export default {
         name: "Services",
         metaInfo: {
-            title: 'Services | Portfolio',
-            meta: [
-                {name: 'description', content: "See which skills I possess, how can I help you. Here you can find a way to contact me."}
-            ]
+            title: 'Services | Portfolio'
         },
         components: {
             Offers,
