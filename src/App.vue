@@ -3,8 +3,7 @@
         <div id="nav">
             <Header v-bind:about="this.isAbout"/>
         </div>
-        <transition
-                :name="((this.goingTo === 'Services' && this.comingFrom === 'home') || (this.goingTo === 'home' && this.comingFrom === 'Services') ? 'services' : 'landing')">
+        <transition name="landing">
             <router-view/>
         </transition>
     </div>

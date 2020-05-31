@@ -2,12 +2,12 @@
     <div class="mail">
         <h1>CONTACT</h1>
         <div class="mailDiv">
-            <a id="anchorImg" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com"
-               target="_blank" rel="noopener noreferrer" @click="gmailAboutClick">
+            <a id="anchorImg" href="mailto:kenosej.business@gmail.com"
+               rel="noopener noreferrer" @click="gmailAboutClick">
                 <img id="coloredMail" src="../../assets/colored_gmail.png" alt="gmail">
             </a>
             <img id="classicMail" src="../../assets/gmail.png" alt="gmail">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com" target="_blank"
+            <a href="mailto:kenosej.business@gmail.com"
                rel="noopener noreferrer" @click="gmailAboutClick">
                 <span>kenosej.business@gmail.com</span>
             </a>

@@ -2,12 +2,6 @@
     <div class="footer">
         <div class="pic">
             <img src="../../assets/profile.jpg" alt="profilePhoto" @click="imgClick">
-            <span>Quality isn't expensive, it's priceless!</span>
-        </div>
-        <div class="arrow">
-            <router-link to="/services">
-                <img src="../../assets/arrow.png" alt="arrow">
-            </router-link>
         </div>
     </div>
 </template>
@@ -41,60 +35,12 @@
         height: 100%;
     }
 
-    .pic:not(img) {
-        align-items: center;
-    }
-
     .pic img {
         max-height: calc(19.7vh - 3em);
         margin-left: 0.5em;
         border: 1px solid #6582BC;
         border-radius: 50%;
-    }
-
-    .pic span {
-        margin-left: 0.7em;
-        position: relative;
-        padding-bottom: 4px;
-        font-size: 13px;
-    }
-
-    .pic span, .pic img {
         margin-top: 1.7em;
-    }
-
-    .pic span:before {
-        position: absolute;
-        content: '';
-        height: 1px;
-        background: #707070;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 95%;
-        margin: 0 auto;
-    }
-
-    .arrow {
-        position: relative;
-        display: flex;
-        justify-content: flex-end;
-        bottom: 24vh;
-        margin-right: 2em;
-    }
-
-    .arrow a {
-        z-index: 2;
-    }
-
-    .arrow img {
-        height: 50px;
-        transition: 0.4s;
-        cursor: pointer;
-    }
-
-    .arrow img:hover {
-        filter: brightness(1.3);
     }
 
     @media only screen and (min-width: 768px) {
@@ -109,47 +55,16 @@
             margin-bottom: 0;
         }
 
-        .pic span {
-            margin-left: 1em;
-            font-size: 18px;
-        }
-
         .pic img {
             max-height: calc(19.7vh - 3em);
             margin-left: 0;
-        }
-
-        .pic span, .pic img {
             margin-top: 0.5em;
-        }
-
-        .arrow {
-            display: flex;
-            align-items: center;
-            position: static;
-            justify-content: flex-end;
-            margin-right: 2em;
-        }
-
-        .arrow img {
-            height: 80px;
         }
     }
 
     @media only screen and (max-width: 815px) and (orientation: landscape) {
-        .arrow {
-            margin-right: 3em;
-        }
-
-        .arrow img {
-            height: 55px;
-        }
-
         .pic img {
             max-height: calc(19.7vh - 0.5em);
-        }
-
-        .pic span, .pic img {
             margin-top: 0;
         }
     }
@@ -160,24 +75,9 @@
             margin-bottom: 1em;
         }
 
-        .pic span {
-            font-size: 20px;
-        }
-
         .pic img {
             max-height: calc(19.7vh - 2em);
-        }
-
-        .pic span, .pic img {
             margin-top: 0;
-        }
-
-        .arrow {
-            margin-right: 3em;
-        }
-
-        .arrow img {
-            height: 105px;
         }
     }
 </style>

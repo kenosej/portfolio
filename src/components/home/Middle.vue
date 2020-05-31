@@ -46,9 +46,13 @@
                 •
                 <span class="bubble">Laravel</span>
             </div>
-            <div id="wpGem">
+            <div id="socketIOGem">
                 •
-                <span class="bubble">Wordpress</span>
+                <span class="bubble">Socket.io</span>
+            </div>
+            <div id="redisGem">
+                •
+                <span class="bubble">Redis</span>
             </div>
         </div>
     </div>
@@ -206,12 +210,20 @@
         --main-hover-color: #ff6358;
     }
 
-    #wpGem {
-        color: #3698C5;
+    #socketIOGem {
+        color: #ffffff;
     }
 
-    #wpGem:hover {
-        --main-hover-color: #3698C5;
+    #socketIOGem:hover {
+        --main-hover-color: #ffffff;
+    }
+
+    #redisGem {
+        color: #d92b21;
+    }
+
+    #redisGem:hover {
+        --main-hover-color: #d92b21;
     }
 
     .gems div {

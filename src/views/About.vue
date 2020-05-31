@@ -19,9 +19,6 @@
 
     export default {
         name: "Services",
-        metaInfo: {
-            title: 'About | Portfolio'
-        },
         components: {
             Bio,
             Info,

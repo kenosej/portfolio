@@ -15,9 +15,6 @@
 
     export default {
         name: "Home",
-        metaInfo: {
-            title: 'Kenan Sejmenović | Portfolio'
-        },
         components: {
             Middle,
             Footer

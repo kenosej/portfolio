@@ -20,7 +20,7 @@
             </div>
             <div class="icon">
                 <img id="gmail" src="../assets/gmail.png" alt="gmail">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kenosej.business@gmail.com" target="_blank"
+                <a href="mailto:kenosej.business@gmail.com"
                    rel="noopener noreferrer" @click="gmailClick">
                     <img id="coloredGmail" src="../assets/colored_gmail.png" alt="gmail">
                 </a>
