@@ -3,25 +3,25 @@
         <div class="icons">
             <div class="icon">
                 <img id="ig" src="../assets/instagram.png" alt="instagram">
-                <a href="https://instagram.com/keno_sej" target="_blank" rel="noopener noreferrer" @click="igClick">
+                <a href="https://instagram.com/keno_sej" target="_blank" rel="noopener noreferrer">
                     <img id="coloredIg" src="../assets/colored_instagram.png" alt="instagram">
                 </a>
             </div>
             <div class="icon">
-                <a href="https://github.com/kenosej" target="_blank" rel="noopener noreferrer" @click="githubClick">
+                <a href="https://github.com/kenosej" target="_blank" rel="noopener noreferrer">
                     <img id="github" src="../assets/github.png" alt="github">
                 </a>
             </div>
             <div class="icon">
                 <img id="twitter" src="../assets/twitter.png" alt="twitter">
-                <a href="https://twitter.com/keno_sej" target="_blank" rel="noopener noreferrer" @click="twitterClick">
+                <a href="https://twitter.com/keno_sej" target="_blank" rel="noopener noreferrer">
                     <img id="coloredTwitter" src="../assets/colored_twitter.png" alt="twitter">
                 </a>
             </div>
             <div class="icon">
                 <img id="gmail" src="../assets/gmail.png" alt="gmail">
                 <a href="mailto:kenosej.business@gmail.com"
-                   rel="noopener noreferrer" @click="gmailClick">
+                   rel="noopener noreferrer">
                     <img id="coloredGmail" src="../assets/colored_gmail.png" alt="gmail">
                 </a>
             </div>
@@ -37,20 +37,6 @@
         name: "Header",
         props: {
             about: Boolean
-        },
-        methods: {
-            igClick() {
-                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&igClick=1`);
-            },
-            githubClick() {
-                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&githubClick=1`)
-            },
-            twitterClick() {
-                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&twitterClick=1`)
-            },
-            gmailClick() {
-                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${Math.floor(+new Date() / 1000) - this.$time}&gmailClick=1`)
-            }
         }
     }
 </script>

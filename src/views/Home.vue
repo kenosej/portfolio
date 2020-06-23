@@ -18,14 +18,6 @@
         components: {
             Middle,
             Footer
-        },
-        data() {
-            return {
-                timeSpent: Math.floor(+new Date() / 1000) - this.$time
-            }
-        },
-        created() {
-            fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&homeCreated=1`)
         }
     }
 </script>

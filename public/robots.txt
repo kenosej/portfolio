@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /css/
+Disallow: /data/
+Disallow: /img/
+Disallow: /js/
+Disallow: /404.html
+Disallow: /statistics.php

@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
         <div class="pic">
-            <img src="../../assets/profile.jpg" alt="profilePhoto" @click="imgClick">
+            <img src="../../assets/profile.jpg" alt="profilePhoto">
         </div>
     </div>
 </template>
@@ -12,11 +12,6 @@
         data() {
             return {
                 timeSpent: Math.floor(+new Date() / 1000) - this.$time
-            }
-        },
-        methods: {
-            imgClick() {
-                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&imgClick=1`)
             }
         }
     }

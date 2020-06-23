@@ -3,7 +3,7 @@
         <h1>ABOUT ME</h1>
         <p class="mobile">
             <span>I'm 19 and already found my passion.</span>
-            <span>I've been working on the web for almost 2 years.</span>
+            <span>I've been working on the web for more than 2 years.</span>
             <span>Working every waking hour and making</span>
             <span>things better is what excites me.</span>
             <span>Contact me for collaboration.</span>
@@ -11,14 +11,14 @@
         </p>
         <p class="tablet">
             <span>I'm 19 and already found my passion.</span>
-            <span>I've been working on the web for almost 2 years.</span>
+            <span>I've been working on the web for more than 2 years.</span>
             <span>Working every waking hour and making things better is what excites me.</span>
             <span>Contact me for collaboration.</span>
             <span>Going to change lives for better.</span>
         </p>
         <p class="desktop">
             <span>I'm 19 and already found my passion.</span>
-            <span>I've been working on the web for almost 2 years.</span>
+            <span>I've been working on the web for more than 2 years.</span>
             <span>Working every waking hour and making things better is what excites me.</span>
             <span>Contact me for collaboration.</span>
             <span>Going to change lives for better.</span>

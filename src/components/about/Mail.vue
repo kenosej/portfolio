@@ -3,12 +3,12 @@
         <h1>CONTACT</h1>
         <div class="mailDiv">
             <a id="anchorImg" href="mailto:kenosej.business@gmail.com"
-               rel="noopener noreferrer" @click="gmailAboutClick">
+               rel="noopener noreferrer">
                 <img id="coloredMail" src="../../assets/colored_gmail.png" alt="gmail">
             </a>
             <img id="classicMail" src="../../assets/gmail.png" alt="gmail">
             <a href="mailto:kenosej.business@gmail.com"
-               rel="noopener noreferrer" @click="gmailAboutClick">
+               rel="noopener noreferrer">
                 <span>kenosej.business@gmail.com</span>
             </a>
         </div>
@@ -21,11 +21,6 @@
         data() {
             return {
                 timeSpent: Math.floor(+new Date() / 1000) - this.$time
-            }
-        },
-        methods: {
-            gmailAboutClick() {
-                fetch(`https://keno-sej.tech/data/updateInfo.php?id=${this.$id}&timeSpent=${this.timeSpent}&gmailAboutClick=1`)
             }
         }
     }
